@@ -27,13 +27,15 @@ int createSocket( int* sockfd, struct sockaddr_in* sockAddress, int port, int ty
       // specify address for socket
       sockAddress->sin_family = AF_INET;
       sockAddress->sin_port = htons(port);
-      sockAddress->sin_addr.s_addr = INADDR_ANY;
+      //sockAddress->sin_addr.s_addr = INADDR_ANY;
+      sockAddress->sin_addr.s_addr = inet_addr("10.1.1.8");
    }
    else if (type == SERVER) {
       // specify address for socket
       sockAddress->sin_family = AF_INET;
       sockAddress->sin_port = htons(port);
-      sockAddress->sin_addr.s_addr = INADDR_ANY;
+      //sockAddress->sin_addr.s_addr = INADDR_ANY;
+      sockAddress->sin_addr.s_addr = inet_addr("10.1.1.170");
 
       //bind the socket to specified IP{ and port
       bind(*sockfd, (struct sockaddr*) sockAddress, sizeof(*sockAddress));

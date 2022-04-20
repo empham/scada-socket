@@ -17,6 +17,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
+#include <arpa/inet.h>
+
 #include "socket.h"
 
 int createSocket( int* sockfd, struct sockaddr_in* sockAddress, int port, int type) {
